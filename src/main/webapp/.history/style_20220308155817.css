@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background: #0f62f9;
+    width: 1350px;
+    height: 128px;
+}
+
+.header .header-top a {
+    color: #fff;
+}
