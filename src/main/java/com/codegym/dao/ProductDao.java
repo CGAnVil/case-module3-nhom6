@@ -25,7 +25,7 @@ public class ProductDao implements IProductDao{
                 String name = resultSet.getString("name");
                 double price = resultSet.getDouble("price");
                 int categoryId = resultSet.getInt("categoryId");
-                int promotionId = resultSet.getInt("promotion");
+                int promotionId = resultSet.getInt("promotionId");
                 Product product = new Product(id, name, price, categoryId, promotionId);
                 products.add(product);
 

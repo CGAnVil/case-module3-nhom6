@@ -9,7 +9,7 @@
 <body>
 
 <div class="container">
-    <h1>Danh Sach San Pham</h1>
+    <h1>Danh Sách Sản Phẩm</h1>
     <a href="/products?action=create">Tạo Sản phẩm Mới</a>
     <table class="table table-bordered border-primary">
         <thead>
@@ -17,7 +17,8 @@
             <th scope="col">Mã Sản Phẩm</th>
             <th scope="col">Tên Sản Phẩm</th>
             <th scope="col">Giá Sản Phẩm</th>
-            <th scope="col"> Mo Ta San Pham</th>
+            <th scope="col">Loại Sản Phẩm</th>
+            <th scope="col">Khuyến Mại</th>
             <%--            thêm cột xóa--%>
             <th colspan="2"></th>
         </tr>
@@ -28,7 +29,8 @@
                 <td>${product.id}</td>
                 <td><a href="/products?action=view&id=${product.id}">${product.name}</a></td>
                 <td>${product.price}</td>
-                <td>${product.description}</td>
+                <td>${product.categoryId}</td>
+                <td>${product.promotionId}</td>
                 <td><a href="/products?action=edit&id=${product.id}">Edit</a></td>
                 <td><a href="/products?action=delete&id=${product.id}">Delete</a></td>
 

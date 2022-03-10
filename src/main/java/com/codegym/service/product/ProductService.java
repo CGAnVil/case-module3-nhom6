@@ -1,14 +1,15 @@
 package com.codegym.service.product;
 
 import com.codegym.dao.IProductDao;
+import com.codegym.dao.ProductDao;
 import com.codegym.model.Product;
 
 import java.util.List;
 
 public class ProductService implements IProductService{
-    private IProductDao iProductDao;
+    private ProductDao iProductDao;
 
-    public ProductService(IProductDao iProductDao) {
+    public ProductService(ProductDao iProductDao) {
         this.iProductDao = iProductDao;
     }
 
