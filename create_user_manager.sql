@@ -35,6 +35,17 @@ create table order_detail(
     order_Id int
 );
 
+insert into role (rolename) values ('admin'),
+                                   ('staff'),
+                                   ('member');
+
+insert into user (name, password, address, phone_number,roleId) VALUES ('admin', 'admin',null,null,1),
+                                                                       ('staff', 'staff',null,null,2),
+                                                                       ('minh', 'minh','HN',null,3),
+                                                                       ('sang', 'sang','HP',null,3),
+                                                                       ('viet', 'viet','ND',null,3),
+                                                                       ('lich', 'lich','NA',null,3),
+                                                                       ('hieu', 'hieu','HN',null,3);
 
 
 
