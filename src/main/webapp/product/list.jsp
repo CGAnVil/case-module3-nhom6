@@ -9,6 +9,7 @@
 <body>
 
 <div class="container">
+    <div><a href="http://localhost:8080/">về trang chủ</a></div>
     <h1>Danh Sách Sản Phẩm</h1>
     <a href="/products?action=create">Tạo Sản phẩm Mới</a>
     <table class="table table-bordered border-primary">
@@ -17,10 +18,10 @@
             <th scope="col">Mã Sản Phẩm</th>
             <th scope="col">Tên Sản Phẩm</th>
             <th scope="col">Giá Sản Phẩm</th>
-            <th scope="col">Loại Sản Phẩm</th>
-            <th scope="col">Khuyến Mại</th>
+            <th scope="col">Mã Loại Sản Phẩm</th>
+            <th scope="col">Mã Khuyến Mại</th>
             <%--            thêm cột xóa--%>
-            <th colspan="2"></th>
+            <th colspan="2">Tùy Chỉnh</th>
         </tr>
         </thead>
         <tbody>

@@ -7,25 +7,25 @@ import com.codegym.model.Product;
 import java.util.List;
 
 public class ProductService implements IProductService{
-    private ProductDao iProductDao;
+    private ProductDao productDao;
 
     public ProductService(ProductDao iProductDao) {
-        this.iProductDao = iProductDao;
+        this.productDao = iProductDao;
     }
 
     @Override
     public List<Product> findAll() {
-        return iProductDao.findAll();
+        return productDao.findAll();
     }
 
     @Override
     public Product findById(int id) {
-        return null;
+        return productDao.findById(id);
     }
 
     @Override
     public boolean create(Product product) {
-        return false;
+         return productDao.create(product) ;
     }
 
     @Override
