@@ -43,6 +43,13 @@ public class CategoryDao implements ICategoryDao{
 
     @Override
     public boolean create(Category category) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO category(name ) value (?)");
+            preparedStatement.setString(1, "name");
+            return preparedStatement.executeUpdate()>0;
+        } catch (SQLException   e) {
+            e.printStackTrace();
+        }
         return false;
     }
 

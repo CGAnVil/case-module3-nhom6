@@ -12,6 +12,9 @@
 <div>
   <a href="/categories"><h1>trang Category</h1></a>
 </div>
+  <div>
+    <a href="/promotions"><h1>trang Promotion</h1></a>
+  </div>
 
   </body>
 </html>

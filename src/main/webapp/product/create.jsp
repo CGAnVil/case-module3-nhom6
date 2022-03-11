@@ -18,17 +18,11 @@
 
     <div class="mb-3">
       <label for="name" class="form-label">Nhập Tên Sản Phẩm</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name">
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp" required name="name">
     </div>
     <div class="mb-3">
       <label for="price" class="form-label">Nhập Giá Sản Phẩm</label>
       <input type="text" class="form-control" id="price" aria-describedby="emailHelp" name="price">
-    </div>
-
-
-    <div class="mb-3">
-      <label for="promotionId" class="form-label">Nhập Mã giảm giá</label>
-      <input type="text" class="form-control" id="promotionId" aria-describedby="emailHelp" name="promotionId">
     </div>
     <div class="mb-3">
       <label for="categoryID" class="form-label">Nhập Mã Loại Sản Phẩm</label>
@@ -38,11 +32,17 @@
         </c:forEach>
       </select>
     </div>
-
+    <div class="mb-3">
+      <label for="promotionId" class="form-label"> Khuyến mại</label>
+      <select name="promotionId" id="promotionId">
+        <c:forEach var="promotion" items="${promotions}">
+          <option value="${promotion.id}">${promotion.description}</option>
+        </c:forEach>
+      </select>
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a href="/products">Quay lại danh sách sản phẩm</a></form>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

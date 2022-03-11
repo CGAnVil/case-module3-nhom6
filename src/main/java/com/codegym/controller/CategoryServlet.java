@@ -13,6 +13,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "CategoryServlet", value = "/categories")
@@ -29,6 +30,13 @@ public class CategoryServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
+            case "create": {
+               RequestDispatcher dispatcher = request.getRequestDispatcher("/category/create.jsp");
+               dispatcher.forward(request, response);
+
+                break;
+            }
+
             default:{
                 List<Category> categories = categoryService.findAll();
                 request.setAttribute("categories", categories);
@@ -41,6 +49,21 @@ public class CategoryServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create": {
+                String name = request.getParameter("name");
+                Category category = new Category(name);
+                categoryService.create(category);
+                response.sendRedirect("/categories");
+                break;
+            }
+
+
+        }
 
     }
 }

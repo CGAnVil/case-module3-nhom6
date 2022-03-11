@@ -1,6 +1,7 @@
 package com.codegym.dao;
 
 import com.codegym.model.Product;
+import com.codegym.service.product.IProductService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -61,21 +62,43 @@ public class ProductDao implements IProductDao{
            preparedStatement.setInt(3, product.getCategoryId());
            preparedStatement.setInt(4, product.getPromotionId());
          return   preparedStatement.executeUpdate()>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateById(int id, Product product) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE product Set name= ?, price=?, categoryId=?, promotionId=? where id =?");
+            preparedStatement.setString(1, product.getName());
+            preparedStatement.setDouble(2, product.getPrice());
+            preparedStatement.setInt(3, product.getCategoryId());
+            preparedStatement.setInt(4, product.getPromotionId());
+            preparedStatement.setInt(5, id);
+            return preparedStatement.executeUpdate()>0;
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
-
-    }
-
-    @Override
-    public boolean updateById(int id, Product product) {
-        return false;
     }
 
     @Override
     public boolean deleteById(int id) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE  from product WHERE id=?");
+            preparedStatement.setInt(1, id);
+            return preparedStatement.executeUpdate()>0;
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         return false;
     }
 }
